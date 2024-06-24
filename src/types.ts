@@ -14,6 +14,14 @@ export interface IResponseData<T> {
   errorMessageCode?: string;
 }
 
-export interface RequestAuth extends Request {
-  user?: JwtPayload | string;
+export interface AuthRequest extends Request {
+  user?: JwtPayload;
+}
+
+export interface IUser extends IPayloadLogin {
+  id: string;
+}
+
+export interface IDataBase {
+  users: IUser[];
 }
